@@ -241,8 +241,29 @@ header h1 {
 }
 
 .sources-content {
-    padding: 0 0.5rem 0.25rem 1.5rem;
-    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+}
+
+.source-chip {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: rgba(37, 99, 235, 0.15);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    color: #93c5fd;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+a.source-chip:hover {
+    background: rgba(37, 99, 235, 0.25);
+    border-color: rgba(37, 99, 235, 0.6);
+    color: #bfdbfe;
 }
 
 /* Markdown formatting styles */
@@ -445,7 +466,8 @@ header h1 {
     margin: 0.5rem 0;
 }
 
-/* Sidebar Headers */
+/* Sidebar Headers + New Chat Button */
+.new-chat-btn,
 .stats-header,
 .suggested-header {
     font-size: 0.875rem;
@@ -460,13 +482,14 @@ header h1 {
     transition: color 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    text-align: left;
+    width: 100%;
 }
 
+.new-chat-btn:focus,
 .stats-header:focus,
-.suggested-header:focus {
-    color: var(--primary-color);
-}
-
+.suggested-header:focus,
+.new-chat-btn:hover,
 .stats-header:hover,
 .suggested-header:hover {
     color: var(--primary-color);
